@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Purchase Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b7a9a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+      background-color: #6a1b9a;
+      
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sell Your Stocks</h1>
+
+        <div class="input-group">
+            <label for="stockName">Stock Name:</label>
+            <input type="text" id="stockName" placeholder="Enter stock name">
+        </div>
+
+        <div class="input-group">
+            <label for="stockPrice">Stock Price per Share:</label>
+            <input type="number" id="stockPrice" placeholder="Enter stock price">
+        </div>
+
+        <div class="input-group">
+            <label for="stockQuantity">Number of Shares:</label>
+            <input type="number" id="stockQuantity" placeholder="Enter number of shares">
+        </div>
+
+        <button onclick="buyStock()">Sell Stock</button>
+
+        <div class="result" id="result">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function buyStock() {
+            const stockName = document.getElementById('stockName').value;
+            const stockPrice = parseFloat(document.getElementById('stockPrice').value);
+            const stockQuantity = parseFloat(document.getElementById('stockQuantity').value);
+
+            if (!stockName || isNaN(stockPrice) || isNaN(stockQuantity)) {
+                document.getElementById('result').innerText = "Please enter valid stock details.";
+                return;
+            }
+
+            const totalCost = stockPrice * stockQuantity;
+
+            // Simulate a purchase (in real scenarios, this would involve backend processing)
+            document.getElementById('result').innerText = `You have successfully sold ${stockQuantity} shares of ${stockName} for $${totalCost.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>

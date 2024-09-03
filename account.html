@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Account Registration</title>
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #1b7a9a;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+ .container {
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     width: 500px;
+ }
+ h2 {
+     text-align: center;
+     margin-bottom: 30px;
+ }
+ .form-group {
+     margin-bottom: 25px;
+ }
+ label {
+     display: block;
+     margin-bottom: 10px;
+ }
+ input, select {
+     width: 90%;
+     padding: 8px;
+     margin-top: 5px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+ }
+ button {
+     width: 100%;
+     padding: 10px;
+     background-color: #6a0dad;
+     border: none;
+     color: white;
+     font-size: 16px;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ button:hover {
+     background-color: #4b0082;
+ }
+ .payment-info {
+     display: none;
+ }
+ .upi-option {
+     display: flex;
+     align-items: center;
+     margin-bottom: 10px;
+ }
+ .upi-option img {
+     width: 24px;
+     height: 24px;
+     margin-right: 10px;
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+     <h2>Create an Account</h2>
+     <form id="registrationForm">
+         <div class="form-group">
+             <label for="username">Username:</label>
+             <input type="text" id="username" name="username" required>
+         </div>
+         <div class="form-group">
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+         </div>
+         <div class="form-group">
+             <label for="mobile-number">Mobile Number:</label>
+             <input type="text" id="mobile-number" name="mobile-number" required>
+         </div>
+         <div class="form-group">
+             <label for="password">Password:</label>
+             <input type="password" id="password" name="password" required>
+         </div>
+         <div class="form-group">
+             <label for="confirm-password">Confirm Password:</label>
+             <input type="password" id="confirm-password" name="confirm-password" required>
+         </div>
+         <div class="form-group">
+             <label for="payment-method">Payment Method:</label>
+             <select id="payment-method" name="payment-method" required>
+                 <option value="">Select a payment method</option>
+                 <option value="credit-card">Credit Card</option>
+                 <option value="paypal">PayPal</option>
+                 <option value="bank-transfer">Bank Transfer</option>
+                 <option value="upi">UPI</option>
+             </select>
+         </div>
+         <div id="credit-card-info" class="payment-info">
+             <div class="form-group">
+                 <label for="cc-number">Credit Card Number:</label>
+                 <input type="text" id="cc-number" name="cc-number">
+             </div>
+             <div class="form-group">
+                 <label for="cc-expiration">Expiration Date:</label>
+                 <input type="month" id="cc-expiration" name="cc-expiration">
+             </div>
+             <div class="form-group">
+                 <label for="cc-cvv">CVV:</label>
+                 <input type="text" id="cc-cvv" name="cc-cvv">
+             </div>
+         </div>
+         <div id="paypal-info" class="payment-info">
+             <div class="form-group">
+                 <label for="paypal-email">PayPal Email:</label>
+                 <input type="email" id="paypal-email" name="paypal-email">
+             </div>
+         </div>
+         <div id="bank-info" class="payment-info">
+             <div class="form-group">
+                 <label for="bank-account">Bank Account Number:</label>
+                 <input type="text" id="bank-account" name="bank-account">
+             </div>
+             <div class="form-group">
+                 <label for="bank-routing">Routing Number:</label>
+                 <input type="text" id="bank-routing" name="bank-routing">
+             </div>
+         </div>
+         <div id="upi-info" class="payment-info">
+             <div class="form-group">
+                 <label>Select UPI Provider:</label>
+                 <div class="upi-option">
+                     <input type="radio" id="phonepe" name="upi-provider" value="phonepe" required>
+                     <label for="phonepe"><img src="images/pp.jpg" alt="PhonePe"> PhonePe</label>
+                 </div>
+                 <div class="upi-option">
+                     <input type="radio" id="gpay" name="upi-provider" value="gpay">
+                     <label for="gpay"><img src="images/gp.jpg" alt="GPay"> GPay</label>
+                 </div>
+                 <div class="upi-option">
+                     <input type="radio" id="paytm" name="upi-provider" value="paytm">
+                     <label for="paytm"><img src="images/pt.jpg" alt="Paytm"> Paytm</label>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="upi-id">UPI ID:</label>
+                 <input type="text" id="upi-id" name="upi-id">
+             </div>
+         </div>
+         <button type="submit">Register</button>
+     </form>
+ </div>
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+     const paymentMethodSelect = document.getElementById('payment-method');
+     const creditCardInfo = document.getElementById('credit-card-info');
+     const paypalInfo = document.getElementById('paypal-info');
+     const bankInfo = document.getElementById('bank-info');
+     const upiInfo = document.getElementById('upi-info');
+     
+     paymentMethodSelect.addEventListener('change', (event) => {
+         const selectedMethod = event.target.value;
+         creditCardInfo.style.display = selectedMethod === 'credit-card' ? 'block' : 'none';
+         paypalInfo.style.display = selectedMethod === 'paypal' ? 'block' : 'none';
+         bankInfo.style.display = selectedMethod === 'bank-transfer' ? 'block' : 'none';
+         upiInfo.style.display = selectedMethod === 'upi' ? 'block' : 'none';
+     });
+
+     const form = document.getElementById('registrationForm');
+     form.addEventListener('submit', (event) => {
+         event.preventDefault();
+         // Here you can add form validation and submission logic
+         alert('Form submitted successfully!');
+     });
+ });
+ </script>
+</body>
+</html>

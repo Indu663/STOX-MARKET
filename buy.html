@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Apple Stock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b7a9a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .stock-info {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .stock-info h2 {
+            font-size: 20px;
+            margin: 0;
+            color: #6a1b9a;
+        }
+
+        .stock-info p {
+            margin: 5px 0;
+        }
+
+        .stock-info .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-group input {
+            width: 80%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .input-group button {
+            padding: 10px 20px;
+            background-color: #6a1b9a;;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-group button:hover {
+            background-color: #6a1b9a;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Buy Apple Stock</h1>
+
+        <div class="stock-info">
+            <h2>Apple Inc. (AAPL)</h2>
+            <p><strong>Company:</strong> Apple Inc.</p>
+            <p><strong>Ticker Symbol:</strong> AAPL</p>
+            <p><strong>Description:</strong> Apple Inc. is a multinational technology company that designs, manufactures, and markets consumer electronics, software, and services.</p>
+            <p class="price">Current Price: $226.35</p>
+        </div>
+
+        <div class="input-group">
+            <label for="stockQuantity">Enter Quantity:</label>
+            <input type="number" id="stockQuantity" placeholder="Number of shares" min="1">
+            <button onclick="buyStock()">Buy Stock</button>
+        </div>
+
+        <div class="result" id="result">
+            <!-- Result will be displayed here -->
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Stock Trading Inc. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function buyStock() {
+            const stockPrice = 150; // Fixed price for Apple stock
+            const quantity = parseInt(document.getElementById('stockQuantity').value);
+
+            if (isNaN(quantity) || quantity <= 0) {
+                document.getElementById('result').innerText = "Please enter a valid quantity.";
+                return;
+            }
+
+            const totalCost = stockPrice * quantity;
+
+            document.getElementById('result').innerText = `You have successfully bought ${quantity} shares of Apple Inc. for $${totalCost.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>

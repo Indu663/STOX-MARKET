@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b7a9a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+      background-color: #6a1b9a;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Stock Profit/Loss Calculator</h1>
+        <form id="stockForm">
+            <div class="input-group">
+                <label for="shares">Number of Shares:</label>
+                <input type="number" id="shares" required>
+            </div>
+            <div class="input-group">
+                <label for="purchasePrice">Purchase Price per Share:</label>
+                <input type="number" id="purchasePrice" required>
+            </div>
+            <div class="input-group">
+                <label for="sellingPrice">Selling Price per Share:</label>
+                <input type="number" id="sellingPrice" required>
+            </div>
+            <button type="button" onclick="calculateProfit()">Calculate</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateProfit() {
+            const shares = document.getElementById('shares').value;
+            const purchasePrice = document.getElementById('purchasePrice').value;
+            const sellingPrice = document.getElementById('sellingPrice').value;
+
+            if (shares && purchasePrice && sellingPrice) {
+                const profitOrLoss = (sellingPrice - purchasePrice) * shares;
+                const resultElement = document.getElementById('result');
+
+                if (profitOrLoss > 0) {
+                    resultElement.textContent = `Profit: $${profitOrLoss.toFixed(2)}`;
+                    resultElement.style.color = "green";
+                } else if (profitOrLoss < 0) {
+                    resultElement.textContent = `Loss: $${Math.abs(profitOrLoss).toFixed(2)}`;
+                    resultElement.style.color = "red";
+                } else {
+                    resultElement.textContent = "No Profit, No Loss.";
+                    resultElement.style.color = "black";
+                }
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>

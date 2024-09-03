@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market News - Stock Insights</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color:#343a40 ;
+        }
+
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: #6a1b9a;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #6a1b9a;
+        }
+
+        main {
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .news-section {
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .news-section h2 {
+            color: #343a40;
+            font-size: 2rem;
+            border-bottom: 2px solid #6a1b9a;
+            padding-bottom: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        .news-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item h3 {
+            font-size: 1.5rem;
+            color: #6a1b9a;
+            margin: 0 0 10px 0;
+        }
+
+        .news-item p {
+            line-height: 1.6;
+            color: #6a1b9a;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        footer form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        footer input, footer textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+            font-size: 1rem;
+        }
+
+        footer input:focus, footer textarea:focus {
+            outline: none;
+            background-color: #e9ecef;
+        }
+
+        footer button {
+            padding: 10px 30px;
+            background-color:#6a1b9a;
+            color: #6a1b9a;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        footer button:hover {
+            background-color: #6a1b9a;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #adb5bd;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Market News - Stock Insights</h1>
+        <p>Get the latest updates on stock market trends and analysis.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#latest-news">Latest News</a></li>
+            <li><a href="#featured">Featured Articles</a></li>
+            <li><a href="#trending">Trending Stocks</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="latest-news" class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-item">
+                <img src="./images/e1.jpg" alt="News Image 1">
+                <h3>Stock Market Hits Record High Amid Economic Optimism</h3>
+                <p>The stock market reached a new record high today as investors remain optimistic about the economic recovery. Key sectors leading the charge include technology and healthcare...</p>
+            </div>
+            <div class="news-item">
+                <img src="./images/e2.jpeg" alt="News Image 2">
+                <h3>Federal Reserve Signals Possible Interest Rate Hike</h3>
+                <p>The Federal Reserve hinted at a potential interest rate hike in the coming months as inflation continues to rise. This news has led to mixed reactions in the market...</p>
+            </div>
+        </section>
+
+        <section id="featured" class="news-section">
+            <h2>Featured Articles</h2>
+            <div class="news-item">
+                <img src="./images/e5.jpg" alt="Featured Article 1">
+                <h3>5 Stocks to Watch in the Coming Quarter</h3>
+                <p>As we enter the new quarter, here are five stocks that analysts believe have the potential to outperform the market. These companies have shown strong financials and growth prospects...</p>
+            </div>
+            <div class="news-item">
+                <img src="./images/e4.jpg" alt="Featured Article 2">
+                <h3>Understanding the Impact of Inflation on Your Investments</h3>
+                <p>Inflation can erode the purchasing power of your investments. In this article, we explore how inflation affects different asset classes and what strategies you can use to protect your portfolio...</p>
+            </div>
+        </section>
+
+        <section id="trending" class="news-section">
+            <h2>Trending Stocks</h2>
+            <div class="news-item">
+                <img src="./images/e6.png" alt="Trending Stock 1">
+                <h3>Technology Giant XYZ Surges 10% on Strong Earnings</h3>
+                <p>XYZ Corporation, a leader in the technology sector, saw its stock price surge by 10% following the release of its quarterly earnings report, which exceeded analysts' expectations...</p>
+            </div>
+            <div class="news-item">
+                <img src="./images/e7.jpg" alt="Trending Stock 2">
+                <h3>ABC Pharmaceuticals Gains Momentum as FDA Approves New Drug</h3>
+                <p>ABC Pharmaceuticals is making headlines as the FDA approved its latest drug for widespread use. The stock is up 8% on the news, with further growth expected as the drug hits the market...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p>Or email us directly at <a href="mailto:info@marketnews.com">info@marketnews.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Thank you for your message. We will get back to you shortly.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

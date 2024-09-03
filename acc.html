@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+ <meta charset=”UTF-8”>
+ <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+ <title>Account Registration</title>
+ <link rel=”stylesheet” href=”styles.css”>
+ <style>
+ Body {
+ Font-family: Arial, sans-serif;
+ Background-color: #f4f4f4;
+ Display: flex;
+ Justify-content: center;
+ Align-items: center;
+ Height: 100vh;
+ }
+ .container {
+ Background-color: #fff;
+ Padding: 20px;
+ Border-radius: 8px;
+ Box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ Width: 500px;
+ }
+ H2 {
+ Text-align: center;
+ Margin-bottom: 30px;
+ }
+ .form-group {
+ Margin-bottom: 25px;
+ }
+ Label {
+ Display: block;
+ Margin-bottom: 10px;
+ }
+ Input, select {
+ Width: 90%;
+ Padding: 8px;
+ Margin-top: 5px;
+ Margin-bottom: 10px;
+ Border: 1px solid #ccc;
+ Border-radius: 4px;
+ }
+ Button {
+ Width: 100%;
+ Padding: 10px;
+ Background-color: #6a0dad;
+ Border: none;
+ Color: white;
+ Font-size: 16px;
+ Border-radius: 4px;
+ Cursor: pointer;
+ }
+ Button:hover {
+ Background-color: #4b0082;
+ }
+ .payment-info {
+ Display: none;
+ }
+ .upi-option {
+ Display: flex;
+ Align-items: center;
+ Margin-bottom: 10px;
+ }
+ .upi-option img {
+ Width: 24px;
+ Height: 24px;
+ Margin-right: 10px;
+ }
+ </style>
+</head>
+<body>
+ <div class=”container”>
+ <h2>Create an Account</h2>
+ <form id=”registrationForm”>
+ <div class=”form-group”>
+ <label for=”username”>Username:</label>
+ <input type=”text” id=”username” name=”username” required>
+ </div>
+ <div class=”form-group”>
+ <label for=”email”>Email:</label>
+ <input type=”email” id=”email” name=”email” required>
+ </div>
+ <div class=”form-group”>
+ <label for=”mobile-number”>Mobile Number:</label>
+ <input type=”text” id=”mobile-number” name=”mobile-number” required>
+ </div>
+ <div class=”form-group”>
+ <label for=”password”>Password:</label>
+ <input type=”password” id=”password” name=”password” required>
+ </div>
+ <div class=”form-group”>
+ <label for=”confirm-password”>Confirm Password:</label>
+ <input type=”password” id=”confirm-password” name=”confirm-password” 
+required>
+ </div>
+ <div class=”form-group”>
+ <label for=”payment-method”>Payment Method:</label>
+ <select id=”payment-method” name=”payment-method” required>
+ <option value=””>Select a payment method</option>
+ <option value=”credit-card”>Credit Card</option>
+ <option value=”paypal”>PayPal</option>
+ <option value=”bank-transfer”>Bank Transfer</option>
+ <option value=”upi”>UPI</option>
+ </select>
+ </div>
+ <div id=”credit-card-info” class=”payment-info”>
+ <div class=”form-group”>
+ <label for=”cc-number”>Credit Card Number:</label>
+ <input type=”text” id=”cc-number” name=”cc-number”>
+ </div>
+ <div class=”form-group”>
+ <label for=”cc-expiration”>Expiration Date:</label>
+ <input type=”month” id=”cc-expiration” name=”cc-expiration”>
+ </div>
+ <div class=”form-group”>
+ <label for=”cc-cvv”>CVV:</label>
+ <input type=”text” id=”cc-cvv” name=”cc-cvv”>
+ </div>
+ </div>
+ <div id=”paypal-info” class=”payment-info”>
+ <div class=”form-group”>
+ <label for=”paypal-email”>PayPal Email:</label>
+ <input type=”email” id=”paypal-email” name=”paypal-email”>
+ </div>
+ </div>
+ <div id=”bank-info” class=”payment-info”>
+ <div class=”form-group”>
+ <label for=”bank-account”>Bank Account Number:</label>
+ <input type=”text” id=”bank-account” name=”bank-account”>
+ </div>
+ <div class=”form-group”>
+ <label for=”bank-routing”>Routing Number:</label>
+ <input type=”text” id=”bank-routing” name=”bank-routing”>
+ </div>
+ </div>
+ <div id=”upi-info” class=”payment-info”>
+ <div class=”form-group”>
+ <label>Select UPI Provider:</label>
+ <div class=”upi-option”>
+ <input type=”radio” id=”phonepe” name=”upi-provider” value=”phonepe” 
+required>
+ <label for=”phonepe”><img src=”phonepe-icon.png” alt=”PhonePe”> 
+PhonePe</label>
+ </div>
+ <div class=”upi-option”>
+ <input type=”radio” id=”gpay” name=”upi-provider” value=”gpay”>
+ <label for=”gpay”><img src=”gpay-icon.png” alt=”GPay”> GPay</label>
+ </div>
+ <div class=”upi-option”>
+ <input type=”radio” id=”paytm” name=”upi-provider” value=”paytm”>
+ <label for=”paytm”><img src=”paytm-icon.png” alt=”Paytm”> Paytm</label>
+ </div>
+ </div>
+ <div class=”form-group”>
+ <label for=”upi-id”>UPI ID:</label>
+ <input type=”text” id=”upi-id” name=”upi-id”>
+ </div>
+ </div>
+ <button type=”submit”>Register</button>
+ </form>
+ </div>
+ <script>
+ Document.addEventListener("DOMContentLoaded", () => {
+ const paymentMethodSelect = document.getElementById("payment-method");
+ const creditCardInfo = document.getElementById("credit-card-info");
+ const paypalInfo = document.getElementById("paypal-info");
+ const bankInfo = document.getElementById("bank-info");
+ const upiInfo = document.getElementById("upi-info");
+ paymentMethodSelect.addEventListener("change", (event) => {
+ const selectedMethod = event.target.value;
+ creditCardInfo.style.display = selectedMethod === "credit-card" ? "block" : "none";
+ paypalInfo.style.display = selectedMethod === "paypal" ? "block" : "none";
+ bankInfo.style.display = selectedMethod === "bank-transfer" ? "block" : "none";
+ upiInfo.style.display = selectedMethod === "upi" ? "block" : "none";
+ });
+ const form = document.getElementById("registrationForm");
+ Form.addEventListener("submit", (event) => {
+ Event.preventDefault();
+ // Here you can add form validation and submission logic
+ Alert("Form submitted successfully!");
+ });
+ });
+ </script>
+</body>
+</html

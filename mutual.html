@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Funds Overview</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #cce5ff;
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+.content-section {
+    margin-bottom: 50px;
+}
+
+.content-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #6a1b9a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Types of Mutual Funds */
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(50% - 20px);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #6a1b9a;
+}
+
+.benefits-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Available Mutual Funds */
+.fund-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.fund-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    max-width: 300px;
+    min-height: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fund-card:hover {
+    transform: translateY(-5px);
+}
+
+.fund-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color:#6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #6a1b9a;
+}
+
+/* Footer */
+footer {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mutual Funds Overview</h1>
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#types">Types</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#fund-list">Funds</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="introduction" class="content-section">
+            <h2>What is a Mutual Fund?</h2>
+            <p>A mutual fund is a financial vehicle comprised of a pool of money collected from many investors to invest in securities like stocks, bonds, money market instruments, and other assets.</p>
+            <p>Managed by professional money managers, mutual funds aim to produce capital gains or income for the fund's investors.</p>
+        </section>
+        
+        <!-- Types of Mutual Funds -->
+        <section id="types" class="content-section">
+            <h2>Types of Mutual Funds</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Equity Funds</h3>
+                    <p>Invest in stocks, offering higher risk and potentially higher returns.</p>
+                </div>
+                <div class="card">
+                    <h3>Debt Funds</h3>
+                    <p>Invest in bonds or other debt securities, generally safer with lower returns.</p>
+                </div>
+                <div class="card">
+                    <h3>Balanced Funds</h3>
+                    <p>Combine equity and debt, balancing risk and return.</p>
+                </div>
+                <div class="card">
+                    <h3>Money Market Funds</h3>
+                    <p>Invest in short-term, high-quality investments, focusing on liquidity and safety.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits of Mutual Funds -->
+        <section id="benefits" class="content-section">
+            <h2>Benefits of Investing in Mutual Funds</h2>
+            <ul class="benefits-list">
+                <li>Diversification: Reduce risk by investing in a wide range of securities.</li>
+                <li>Professional Management: Managed by experienced fund managers.</li>
+                <li>Liquidity: Easily bought or sold at current NAV.</li>
+                <li>Affordability: Accessible to most people, even with a small initial investment.</li>
+            </ul>
+        </section>
+        
+        <!-- Available Mutual Funds -->
+        <section id="fund-list" class="content-section">
+            <h2>Available Mutual Funds</h2>
+            <div class="fund-container">
+                <div class="fund-card" id="fund1">
+                    <h3>Equity Growth Fund</h3>
+                    <p>Category: Equity</p>
+                    <p>Net Asset Value (NAV): $105.25</p>
+                    <p>1-Year Return: 12.5%</p>
+                    <button onclick="showDetails('fund1')">View Details</button>
+                </div>
+                <div class="fund-card" id="fund2">
+                    <h3>Income Debt Fund</h3>
+                    <p>Category: Debt</p>
+                    <p>Net Asset Value (NAV): $98.75</p>
+                    <p>1-Year Return: 5.8%</p>
+                    <button onclick="showDetails('fund2')">View Details</button>
+                </div>
+                <div class="fund-card" id="fund3">
+                    <h3>Balanced Advantage Fund</h3>
+                    <p>Category: Balanced</p>
+                    <p>Net Asset Value (NAV): $102.00</p>
+                    <p>1-Year Return: 8.3%</p>
+                    <button onclick="showDetails('fund3')">View Details</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Fund Details -->
+        <section id="fund-details" class="content-section" style="display:none;">
+            <h2>Fund Details</h2>
+            <div id="details"></div>
+            <button onclick="hideDetails()">Back to List</button>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mutual Funds Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script >
+        function showDetails(fundId) {
+    const fund = document.getElementById(fundId);
+    const detailsSection = document.getElementById('fund-details');
+    const detailsDiv = document.getElementById('details');
+    
+    // Adding more detailed information about each fund
+    detailsDiv.innerHTML = `
+        <h3>${fund.querySelector('h3').innerText}</h3>
+        <p>${fund.querySelector('p:nth-of-type(1)').innerText}</p>
+        <p>${fund.querySelector('p:nth-of-type(2)').innerText}</p>
+        <p>${fund.querySelector('p:nth-of-type(3)').innerText}</p>
+        <p>More detailed information about this fund can be added here...</p>
+    `;
+    
+    document.getElementById('fund-list').style.display = 'none';
+    detailsSection.style.display = 'block';
+}
+
+function hideDetails() {
+    document.getElementById('fund-list').style.display = 'flex';
+    document.getElementById('fund-details').style.display = 'none';
+}
+
+    </script>
+</body>
+</html>

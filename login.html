@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #1b7a9a; /* Purple background */
+    }
+    .login-container {
+        height: 400px;
+        width: 400 px;
+      margin-top: 100px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .btn-purple {
+      background-color: #6a1b9a;
+      color: white;
+    }
+    .btn-purple:hover {
+      background-color: #4a0072;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center">
+    <div class="login-container col-md-4">
+      <h2 class="text-center text-purple">Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-purple btn-block">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

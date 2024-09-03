@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcEDO5sRUp8FfS4DnScKwlg+Sga7u4c9iEwlBRU5NU3ldFdfX7E2Lh1FrRR3Do7pQMWFthCWe4Iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9b59b6; /* Violet background */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    h1 {
+        color: #fff; /* White color */
+        margin: 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        counter-reset: rowNumber; /* Initialize counter for row numbers */
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #9b59b6; /* Violet color */
+    }
+
+    td {
+        color: #9b59b6; /* Violet color */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr td:first-child {
+        padding: 10px;
+        text-align: right;
+        border: 1px solid #4b0082;
+    }
+
+    tr td:first-child::before {
+        counter-increment: rowNumber; /* Increment counter */
+        content: counter(rowNumber) " "; /* Display counter value with no space */
+    } 
+    .design{
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Markets</h1>
+    </div>
+    <table>
+        <tbody>
+            <tr><td></td><td> <a class="design" href="./company.html">Apple Inc. (USA) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Microsoft Corp. (USA) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Amazon.com Inc. (USA) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Alphabet Inc. (USA)</td></tr>
+            <tr><td></td><td> <a  class="design"href="./company.html">Alphabet Inc. (USA)</td></tr>
+            <tr><td></td><td> <a  class="design"href="./company.html">Alphabet Inc. (USA)</td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Facebook, Inc. (USA) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Berkshire Hathaway Inc. (USA) </a></td></tr>
+            <tr><td></td><td> <a  class="design" href="./company.html">Tencent Holdings Ltd. (China) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Alibaba Group Holding Ltd. (China) </a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Samsung Electronics Co., Ltd. (South Korea)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">TSMC (Taiwan)</a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Sony Corporation (Japan) </a></td></tr>
+            <tr><td></td><td> <a class="design" href="./company.html">Toyota Motor Corporation (Japan) </a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Siemens AG (Germany)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">BMW AG (Germany)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Royal Dutch Shell (Netherlands)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">HSBC Holdings plc (UK)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Unilever (UK/Netherland)s</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Nestlé S.A. (Switzerland)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Volkswagen AG (Germany)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Roche Holding AG (Switzerland)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Reliance Industries Limited (India)</a></td></tr>
+            <tr><td></td><td> <a class="design"href="./company.html">Tata Consultancy Services (India)</a></td></tr>>
+        </tbody>
+    </table>
+    <script src="scripts.js"></script>
+</body>
+</html>
